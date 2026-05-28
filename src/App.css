@@ -2,3 +2,11 @@
 body{margin:0;font-family:Inter,system-ui,sans-serif}
 .app{min-height:100vh;display:flex;align-items:center;justify-content:center}
 .app{color:white;background:linear-gradient(135deg,#0f172a,#312e81,#581c87)}
+
+
+.todo-card{width:min(92%,480px);padding:32px}
+.todo-card{border:1px solid rgba(255,255,255,.18)}
+.todo-card{background:rgba(255,255,255,.12)}
+.todo-card{backdrop-filter:blur(18px);border-radius:28px}
+.todo-card{box-shadow:0 24px 80px rgba(0,0,0,.35)}
+
