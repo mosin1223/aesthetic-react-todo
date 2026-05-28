@@ -43,3 +43,23 @@ h1{margin:0;
   gap: 12px;
   margin-top: 24px;
 }
+
+.todo-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 16px;
+}
+
+.todo-form button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.todo-form button {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  color: white;
+  font-weight: 700;
+}
