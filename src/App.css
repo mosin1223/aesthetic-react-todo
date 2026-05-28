@@ -1,0 +1,4 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif}
+.app{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.app{color:white;background:linear-gradient(135deg,#0f172a,#312e81,#581c87)}
