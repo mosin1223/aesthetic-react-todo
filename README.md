@@ -6,22 +6,22 @@ This project focuses on clean UI, task management, filters, localStorage persist
 
 ## Features
 
-* Add new tasks
-* Mark tasks as complete or active
-* Delete tasks with a trash icon
-* Filter tasks by All, Active, and Completed
-* View total and completed task count
-* Save tasks in localStorage
-* Responsive and aesthetic glassmorphism UI
+- Add new tasks
+- Mark tasks as complete or active
+- Delete tasks with a trash icon
+- Filter tasks by All, Active, and Completed
+- View total and completed task count
+- Save tasks in localStorage
+- Responsive and aesthetic glassmorphism UI
 
 ## Tech Stack
 
-* React
-* Vite
-* JavaScript
-* CSS
-* localStorage
-* Lucide React Icons
+- React
+- Vite
+- JavaScript
+- CSS
+- localStorage
+- Lucide React Icons
 
 ## Getting Started
 
