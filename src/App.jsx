@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Trash2 } from "lucide-react";
 import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
@@ -17,6 +18,10 @@ function App() {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo,
       ),
     );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -47,6 +52,13 @@ function App() {
                 {todo.completed ? "✓" : ""}
               </button>
               <span>{todo.text}</span>
+              <button
+                className="delete-btn"
+                type="button"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                <Trash2 size={18}  />
+              </button>
             </li>
           ))}
         </ul>
