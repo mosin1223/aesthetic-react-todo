@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { Sparkles, Trash2 } from "lucide-react";
 import { useEffect } from "react";
 import "./App.css";
 function App() {
@@ -44,7 +44,12 @@ function App() {
 
   return (
     <main className="app">
+      <div className="blob blob-one"></div>
+      <div className="blob blob-two"></div>
       <section className="todo-card">
+        <div className="hero-icon">
+          <Sparkles size={28} />
+        </div>
         <p className="eyebrow">Daily Focus</p>
         <h1>Todo App</h1>
         <p className="subtitle">Plan, track, and finish your tasks.</p>
