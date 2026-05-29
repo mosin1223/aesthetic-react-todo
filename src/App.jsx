@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Trash2 } from "lucide-react";
+import { useEffect } from "react";
 import "./App.css";
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
   const [taskText, setTaskText] = useState("");
   const [filter, setFilter] = useState("all");
 
@@ -33,6 +37,10 @@ function App() {
     if (filter === "completed") return todo.completed;
     return true;
   });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <main className="app">
@@ -88,7 +96,7 @@ function App() {
         )}
 
         <ul className="todo-list">
-          {filteredTodos.map((todo)  => (
+          {filteredTodos.map((todo) => (
             <li key={todo.id} className={todo.completed ? "completed" : ""}>
               <button
                 className="check-btn"
