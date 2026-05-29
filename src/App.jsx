@@ -24,12 +24,20 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const totalTodos = todos.length;
+  const completedTodos = todos.filter((todo) => todo.completed).length;
+
   return (
     <main className="app">
       <section className="todo-card">
         <p className="eyebrow">Daily Focus</p>
         <h1>Todo App</h1>
         <p className="subtitle">Plan, track, and finish your tasks.</p>
+
+        <div className="stats">
+          <span>Total: {totalTodos}</span>
+          <span>Completed: {completedTodos}</span>
+        </div>
 
         <form className="todo-form" onSubmit={addTodo}>
           <input
@@ -40,6 +48,13 @@ function App() {
           />{" "}
           <button>Add</button>
         </form>
+
+        {todos.length === 0 && (
+          <div className="empty-state">
+            <p>No tasks yet</p>
+            <small>Add your first task to start your day.</small>
+          </div>
+        )}
 
         <ul className="todo-list">
           {todos.map((todo) => (
@@ -57,7 +72,7 @@ function App() {
                 type="button"
                 onClick={() => deleteTodo(todo.id)}
               >
-                <Trash2 size={18}  />
+                <Trash2 size={18} />
               </button>
             </li>
           ))}

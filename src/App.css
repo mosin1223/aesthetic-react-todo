@@ -164,3 +164,41 @@ h1{margin:0;
   background: linear-gradient(135deg, #fb7185, #e11d48);
   color: white;
 }
+
+.stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.stats span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.stats span {
+  color: #ede9fe;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.empty-state {
+  margin-top: 24px;
+  padding: 22px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+.empty-state p {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.empty-state small {
+  color: #ddd6fe;
+}
