@@ -202,3 +202,28 @@ h1{margin:0;
 .empty-state small {
   color: #ddd6fe;
 }
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filters button {
+  color: #ddd6fe;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 700;
+}
+
+.filters .active-filter {
+  color: white;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+}

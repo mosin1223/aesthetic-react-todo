@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [taskText, setTaskText] = useState("");
+  const [filter, setFilter] = useState("all");
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -27,6 +28,12 @@ function App() {
   const totalTodos = todos.length;
   const completedTodos = todos.filter((todo) => todo.completed).length;
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "active") return !todo.completed;
+    if (filter === "completed") return todo.completed;
+    return true;
+  });
+
   return (
     <main className="app">
       <section className="todo-card">
@@ -49,6 +56,30 @@ function App() {
           <button>Add</button>
         </form>
 
+        <div className="filters">
+          <button
+            type="button"
+            className={filter === "all" ? "active-filter" : ""}
+            onClick={() => setFilter("all")}
+          >
+            All
+          </button>
+          <button
+            type="button"
+            className={filter === "active" ? "active-filter" : ""}
+            onClick={() => setFilter("active")}
+          >
+            Active
+          </button>
+          <button
+            type="button"
+            className={filter === "completed" ? "active-filter" : ""}
+            onClick={() => setFilter("completed")}
+          >
+            Completed
+          </button>
+        </div>
+
         {todos.length === 0 && (
           <div className="empty-state">
             <p>No tasks yet</p>
@@ -57,7 +88,7 @@ function App() {
         )}
 
         <ul className="todo-list">
-          {todos.map((todo) => (
+          {filteredTodos.map((todo)  => (
             <li key={todo.id} className={todo.completed ? "completed" : ""}>
               <button
                 className="check-btn"
